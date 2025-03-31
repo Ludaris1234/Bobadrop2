@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hyperlinks</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function guessNumber() {
+            const Randomnumber = Math.random(); 
+            const timesednumber = Randomnumber * 10; 
+            const Fullnumber = Math.floor(timesednumber); 
+            const Final = Fullnumber + 1;
+            const userGuess = prompt("Pick a Number from 1-10, the website would close if you guess it wrong.");
+            if (parseInt(userGuess) === Final || userGuess === 'Please let me in') {
+                alert("Nice! You got it right. Behold: Very important links on the next page.");
+            } else {
+                alert("Wrong guess!!!!!!!!!! The correct number was " + Final);
+                window.close();
+            }
+        }
+
+        function Secret() {
+            const secretText = document.getElementById("secretText");
+            if (secretText.style.display === "none" || secretText.style.display === "") {
+                secretText.style.display = "block"; 
+            } else {
+                secretText.style.display = "none"; 
+            }
+        }
+    </script>
+</head>
+<body onload="guessNumber()">
+    <h1>Very important links:</h1>
+    <ul>
+        <li><a href="https://www.google.com">Google</a></li>
+        <li><a href="https://www.chess.com/home">Chess</a></li>
+        <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&source_ve_path=MTc4NDI0">YouTube</a></li>
+    </ul>
+    <h2> How many tries did it take you to guess it?</h2>
+    <form>
+        <select id="response">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="idk">More than 20 😔</option>
+        </select>
+        <button type="button" onclick="submitResponse()">Submit</button>
+    </form>
+
+    <p id="submissionResponse"></p> 
+    <div style="margin-top: 20px;">
+        <button onclick="Secret()" style="background-color: #f44336; color: #ffffff; padding: 10px 20px; font-size: 20px; border-radius: 5px;">
+            Secret, do not click
+        </button>
+        <p id="secretText" style="display: none; margin: 10px; background-color: #ffffff; border: 1px solid #ddd; padding: 10px; border-radius: 5px;">
+            Did you know, you could have typed "Please let me in" instead of a number. Manners are important!
+        </p>
+    </div>
+
+    <footer>
+        <p>This website is made by Lucas T, who is born on December 26, 2009 (Yes, one day after Christmas).
+            Btw, the submit button does absolutely nothing.
+        </p>
+    </footer>
+</body>
+</html>
